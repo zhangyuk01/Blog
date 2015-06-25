@@ -1,7 +1,7 @@
 development:
   adapter: mysql2
   host: localhost
-  database: yy_blog
+  database: ser_blog
   username: root
   password:
   pool: 5
@@ -9,7 +9,7 @@ development:
 test:
   adapter: mysql2
   host: localhost
-  database: yy_blog_test
+  database: ser_blog_test
   username: root
   password:
   pool: 5
@@ -20,6 +20,6 @@ production:
   host: localhost
   username: root
   password:
-  database: yy_blog_pro
+  database: ser_blog_pro
   pool: 5
   timeout: 5000
