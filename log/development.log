@@ -2241,3 +2241,121 @@ Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-06-26 09:03:23
 
 
 Started GET "/assets/sprites/social-share-button.png" for 127.0.0.1 at 2015-06-26 09:03:23 +0800
+
+
+Started GET "/" for 127.0.0.1 at 2015-08-26 18:51:10 +0800
+  [1m[36mActiveRecord::SchemaMigration Load (2.8ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by BlogsController#index as HTML
+  [1m[35mArticle Load (8.1ms)[0m  SELECT  `articles`.* FROM `articles`   ORDER BY updated_at desc LIMIT 10
+  Rendered articles/_article.html.haml (5.2ms)
+  Rendered articles/_articles.html.haml (30.3ms)
+  [1m[36mArticleComment Load (4.0ms)[0m  [1mSELECT  `article_comments`.* FROM `article_comments`   ORDER BY updated_at desc LIMIT 10[0m
+  Rendered blogs/index.html.haml within layouts/application (41.6ms)
+  [1m[35mBlogInfo Load (0.3ms)[0m  SELECT  `blog_info`.* FROM `blog_info`   ORDER BY `blog_info`.`id` ASC LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `blog_info`.* FROM `blog_info`   ORDER BY `blog_info`.`id` ASC LIMIT 1[0m
+  Rendered layouts/_footer.html.haml (0.8ms)
+Completed 200 OK in 1071ms (Views: 989.2ms | ActiveRecord: 20.7ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2015-08-26 18:51:11 +0800
+
+
+Started GET "/assets/register.css?body=1" for 127.0.0.1 at 2015-08-26 18:51:11 +0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-08-26 18:51:11 +0800
+
+
+Started GET "/assets/_font-awesome.css?body=1" for 127.0.0.1 at 2015-08-26 18:51:11 +0800
+
+
+Started GET "/assets/_font-awesome-ie7.min.css?body=1" for 127.0.0.1 at 2015-08-26 18:51:11 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-08-26 18:51:11 +0800
+
+
+Started GET "/assets/social-share-button.css?body=1" for 127.0.0.1 at 2015-08-26 18:51:11 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-08-26 18:51:11 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-08-26 18:51:11 +0800
+
+
+Started GET "/assets/respond.min.js?body=1" for 127.0.0.1 at 2015-08-26 18:51:11 +0800
+
+
+Started GET "/assets/html5shiv.min.js?body=1" for 127.0.0.1 at 2015-08-26 18:51:11 +0800
+
+
+Started GET "/assets/jquery-fieldselection.js?body=1" for 127.0.0.1 at 2015-08-26 18:51:11 +0800
+
+
+Started GET "/assets/markdown-toolbar-core.js?body=1" for 127.0.0.1 at 2015-08-26 18:51:11 +0800
+
+
+Started GET "/assets/markdown-toolbar.js?body=1" for 127.0.0.1 at 2015-08-26 18:51:11 +0800
+
+
+Started GET "/assets/jquery.iframe-transport.js?body=1" for 127.0.0.1 at 2015-08-26 18:51:11 +0800
+
+
+Started GET "/assets/jquery.remotipart.js?body=1" for 127.0.0.1 at 2015-08-26 18:51:11 +0800
+
+
+Started GET "/assets/social-share-button.js?body=1" for 127.0.0.1 at 2015-08-26 18:51:11 +0800
+
+
+Started GET "/assets/markdown-toolbar-buttons.js?body=1" for 127.0.0.1 at 2015-08-26 18:51:11 +0800
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-08-26 18:51:11 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-08-26 18:51:11 +0800
+
+
+Started GET "/assets/fontawesome-webfont.woff" for 127.0.0.1 at 2015-08-26 18:51:12 +0800
+
+
+Started GET "/blogs/about" for 127.0.0.1 at 2015-08-26 19:04:39 +0800
+Processing by BlogsController#about as HTML
+  [1m[35mBlogInfo Load (0.5ms)[0m  SELECT  `blog_info`.* FROM `blog_info`   ORDER BY `blog_info`.`id` ASC LIMIT 1
+  Rendered blogs/about.html.haml within layouts/application (1.5ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `blog_info`.* FROM `blog_info`   ORDER BY `blog_info`.`id` ASC LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `blog_info`.* FROM `blog_info`   ORDER BY `blog_info`.`id` ASC LIMIT 1
+  Rendered layouts/_footer.html.haml (1.4ms)
+Completed 200 OK in 253ms (Views: 250.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2015-08-26 19:04:41 +0800
+Processing by ArticlesController#index as HTML
+  [1m[36mArticle Load (0.2ms)[0m  [1mSELECT  `articles`.* FROM `articles`   ORDER BY updated_at desc LIMIT 10 OFFSET 0[0m
+  Rendered articles/_article.html.haml (0.5ms)
+  [1m[35m (1.6ms)[0m  SELECT COUNT(*) FROM `articles`
+  Rendered articles/_articles.html.haml (9.6ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM `articles`[0m
+  [1m[35mCategory Load (3.3ms)[0m  SELECT `categories`.* FROM `categories`   ORDER BY articles_count desc
+  Rendered articles/_article_sidebar.html.haml (13.8ms)
+  Rendered articles/index.html.haml within layouts/application (28.3ms)
+  [1m[36mBlogInfo Load (0.3ms)[0m  [1mSELECT  `blog_info`.* FROM `blog_info`   ORDER BY `blog_info`.`id` ASC LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `blog_info`.* FROM `blog_info`   ORDER BY `blog_info`.`id` ASC LIMIT 1
+  Rendered layouts/_footer.html.haml (0.1ms)
+Completed 200 OK in 259ms (Views: 248.7ms | ActiveRecord: 8.1ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2015-08-26 19:04:43 +0800
+Processing by UsersController#login as HTML
+Redirected to http://localhost:4444/login?from=http%3A%2F%2Flocalhost%3A4444%2Farticles
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/login?from=http%3A%2F%2Flocalhost%3A4444%2Farticles" for 127.0.0.1 at 2015-08-26 19:04:43 +0800
+Processing by UsersController#login as HTML
+  Parameters: {"from"=>"http://localhost:4444/articles"}
+  [1m[36mBlogInfo Load (0.2ms)[0m  [1mSELECT  `blog_info`.* FROM `blog_info`   ORDER BY `blog_info`.`id` ASC LIMIT 1[0m
+  Rendered users/login.html.haml within layouts/register (19.9ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `blog_info`.* FROM `blog_info`   ORDER BY `blog_info`.`id` ASC LIMIT 1
+Completed 200 OK in 268ms (Views: 257.7ms | ActiveRecord: 4.4ms)
