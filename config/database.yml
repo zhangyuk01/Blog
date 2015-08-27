@@ -1,17 +1,17 @@
 development:
   adapter: mysql2
   host: localhost
-  database: ser_blog
+  database: zhangyu_blog
   username: root
-  password:
+  password: root
   pool: 5
   timeout: 5000
 test:
   adapter: mysql2
   host: localhost
-  database: ser_blog_test
+  database: zhangyu_blog_test
   username: root
-  password:
+  password: root
   pool: 5
   timeout: 5000
 
@@ -19,7 +19,7 @@ production:
   adapter: mysql2
   host: localhost
   username: root
-  password:
-  database: ser_blog_pro
+  password: root
+  database: zhangyu_blog_pro
   pool: 5
   timeout: 5000

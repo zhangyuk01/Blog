@@ -11,5 +11,5 @@ admin = User.new username: 'yunanxili', password: '504523', password_confirmatio
 puts admin.save! ? 'add admin success.' : 'add admin fail!'
 
 #添加一个默认分类
-category = Category.new name: '默认分类'
+category = Category.new name: 'morenfenlei'
 puts category.save! ? 'add category success.' : 'add category fail!'

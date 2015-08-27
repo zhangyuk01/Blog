@@ -7130,3 +7130,672 @@ Processing by ArticlesController#index as HTML
   [1m[36mBlogInfo Load (0.2ms)[0m  [1mSELECT  `blog_info`.* FROM `blog_info`   ORDER BY `blog_info`.`id` ASC LIMIT 1[0m
   Rendered layouts/_footer.html.haml (0.1ms)
 Completed 200 OK in 227ms (Views: 224.2ms | ActiveRecord: 1.2ms)
+  [1m[36m (97.2ms)[0m  [1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (67.9ms)[0m  CREATE UNIQUE INDEX `unique_schema_migrations`  ON `schema_migrations` (`version`) 
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Migrating to CreateUsers (20140825134700)
+  [1m[35m (13.1ms)[0m  CREATE TABLE `users` (`id` int(11) auto_increment PRIMARY KEY, `username` varchar(255), `password_digest` varchar(255), `email` varchar(255), `admin` tinyint(1), `last_login_time` datetime, `last_reply_time` datetime, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (40.6ms)[0m  [1mCREATE  INDEX `index_users_on_username`  ON `users` (`username`) [0m
+  [1m[35m (36.1ms)[0m  CREATE  INDEX `index_users_on_email`  ON `users` (`email`) 
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (36.1ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20140825134700')
+  [1m[36m (7.5ms)[0m  [1mCOMMIT[0m
+Migrating to CreateArticles (20140826093600)
+  [1m[35m (10.2ms)[0m  CREATE TABLE `articles` (`id` int(11) auto_increment PRIMARY KEY, `user_id` int(11), `title` varchar(255), `tags` varchar(255), `content` text, `view_count` int(11), `star_count` int(11), `comments_count` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (37.7ms)[0m  [1mCREATE  INDEX `index_articles_on_user_id`  ON `articles` (`user_id`) [0m
+  [1m[35m (39.7ms)[0m  CREATE  INDEX `index_articles_on_title`  ON `articles` (`title`) 
+  [1m[36m (37.0ms)[0m  [1mCREATE  INDEX `index_articles_on_view_count`  ON `articles` (`view_count`) [0m
+  [1m[35m (37.7ms)[0m  CREATE  INDEX `index_articles_on_star_count`  ON `articles` (`star_count`) 
+  [1m[36m (39.6ms)[0m  [1mCREATE  INDEX `index_articles_on_comments_count`  ON `articles` (`comments_count`) [0m
+  [1m[35m (35.3ms)[0m  CREATE  INDEX `index_articles_on_created_at`  ON `articles` (`created_at`) 
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20140826093600')
+  [1m[36m (7.3ms)[0m  [1mCOMMIT[0m
+Migrating to CreateCategories (20140826093700)
+  [1m[35m (15.2ms)[0m  CREATE TABLE `categories` (`id` int(11) auto_increment PRIMARY KEY, `name` varchar(255), `articles_count` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (41.8ms)[0m  [1mCREATE  INDEX `index_categories_on_articles_count`  ON `categories` (`articles_count`) [0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20140826093700')[0m
+  [1m[35m (6.5ms)[0m  COMMIT
+Migrating to AddSourceColumnToArticles (20140826125700)
+  [1m[36m (37.0ms)[0m  [1mALTER TABLE `articles` ADD `source` varchar(255)[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20140826125700')[0m
+  [1m[35m (5.2ms)[0m  COMMIT
+Migrating to AddCategoryIdColumnToArticles (20140826132200)
+  [1m[36m (34.1ms)[0m  [1mALTER TABLE `articles` ADD `category_id` int(11)[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20140826132200')[0m
+  [1m[35m (6.3ms)[0m  COMMIT
+Migrating to CreateArticleStars (20140827095400)
+  [1m[36m (14.9ms)[0m  [1mCREATE TABLE `article_stars` (`id` int(11) auto_increment PRIMARY KEY, `article_id` int(11), `user_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35m (40.9ms)[0m  CREATE  INDEX `index_article_stars_on_article_id_and_user_id`  ON `article_stars` (`article_id`, `user_id`) 
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20140827095400')
+  [1m[36m (10.6ms)[0m  [1mCOMMIT[0m
+Migrating to CreateArticleViews (20140827125400)
+  [1m[35m (11.8ms)[0m  CREATE TABLE `article_views` (`id` int(11) auto_increment PRIMARY KEY, `article_id` int(11), `user_id` int(11), `ip` varchar(255), `param_string` text, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (43.2ms)[0m  [1mCREATE  INDEX `index_article_views_on_article_id_and_ip_and_created_at`  ON `article_views` (`article_id`, `ip`, `created_at`) [0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20140827125400')[0m
+  [1m[35m (7.4ms)[0m  COMMIT
+Migrating to CreateArticleComments (20140827134600)
+  [1m[36m (9.8ms)[0m  [1mCREATE TABLE `article_comments` (`id` int(11) auto_increment PRIMARY KEY, `article_id` int(11), `user_id` int(11), `content` text, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35m (36.7ms)[0m  CREATE  INDEX `index_article_comments_on_article_id`  ON `article_comments` (`article_id`) 
+  [1m[36m (35.1ms)[0m  [1mCREATE  INDEX `index_article_comments_on_user_id`  ON `article_comments` (`user_id`) [0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20140827134600')[0m
+  [1m[35m (4.1ms)[0m  COMMIT
+Migrating to AddNicknameAndAvatarColumnToUsers (20140831174700)
+  [1m[36m (25.3ms)[0m  [1mALTER TABLE `users` ADD `nick_name` varchar(255)[0m
+  [1m[35m (26.5ms)[0m  ALTER TABLE `users` ADD `avatar` varchar(255)
+  [1m[36m (38.7ms)[0m  [1mCREATE  INDEX `index_users_on_nick_name`  ON `users` (`nick_name`) [0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20140831174700')[0m
+  [1m[35m (4.4ms)[0m  COMMIT
+Migrating to CreateBlogInfo (20140831194600)
+  [1m[36m (22.2ms)[0m  [1mCREATE TABLE `blog_info` (`id` int(11) auto_increment PRIMARY KEY, `name` varchar(255), `blog_title` varchar(255), `email` varchar(255), `description` text) ENGINE=InnoDB[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20140831194600')[0m
+  [1m[35m (5.6ms)[0m  COMMIT
+Migrating to AddActivationColumnToUsers (20140908084800)
+  [1m[36m (31.3ms)[0m  [1mALTER TABLE `users` ADD `activation` tinyint(1)[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20140908084800')[0m
+  [1m[35m (3.7ms)[0m  COMMIT
+Migrating to CreateUserActives (20140908085400)
+  [1m[36m (12.5ms)[0m  [1mCREATE TABLE `user_actives` (`id` int(11) auto_increment PRIMARY KEY, `user_id` int(11), `type_name` varchar(255), `token` varchar(255), `used` tinyint(1), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20140908085400')[0m
+  [1m[35m (4.8ms)[0m  COMMIT
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (24.8ms)[0m  [1mSELECT  1 AS one FROM `users`  WHERE `users`.`username` = BINARY 'yunanxili' LIMIT 1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM `users`  WHERE `users`.`email` = BINARY '1135841068@qq.com' LIMIT 1
+  [1m[36mSQL (2.2ms)[0m  [1mINSERT INTO `users` (`activation`, `admin`, `created_at`, `email`, `password_digest`, `updated_at`, `username`) VALUES (1, 1, '2015-08-27 13:44:06', '1135841068@qq.com', '$2a$10$4um3k8fSFIZvAL25udqOK.vfwpIeZTNIa0ElZ9HYh2wpgZtZHUanC', '2015-08-27 13:44:06', 'yunanxili')[0m
+  [1m[35m (5.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `categories` (`created_at`, `name`, `updated_at`) VALUES ('2015-08-27 13:44:06', 'morenfenlei', '2015-08-27 13:44:06')
+  [1m[36m (4.3ms)[0m  [1mCOMMIT[0m
+
+
+Started GET "/" for 106.185.41.148 at 2015-08-27 13:46:33 +0800
+Processing by BlogsController#index as HTML
+  [1m[36mArticle Load (0.4ms)[0m  [1mSELECT  `articles`.* FROM `articles`   ORDER BY updated_at desc LIMIT 10[0m
+  Rendered articles/_articles.html.haml (8.1ms)
+  [1m[35mArticleComment Load (0.2ms)[0m  SELECT  `article_comments`.* FROM `article_comments`   ORDER BY updated_at desc LIMIT 10
+  Rendered blogs/index.html.haml within layouts/application (47.3ms)
+  [1m[36mBlogInfo Load (0.2ms)[0m  [1mSELECT  `blog_info`.* FROM `blog_info`   ORDER BY `blog_info`.`id` ASC LIMIT 1[0m
+  Rendered layouts/_footer.html.haml (1.1ms)
+Completed 200 OK in 1491ms (Views: 1321.1ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/" for 106.185.41.148 at 2015-08-27 13:46:35 +0800
+Processing by BlogsController#index as HTML
+  [1m[35mArticle Load (0.1ms)[0m  SELECT  `articles`.* FROM `articles`   ORDER BY updated_at desc LIMIT 10
+  Rendered articles/_articles.html.haml (0.8ms)
+  [1m[36mArticleComment Load (0.1ms)[0m  [1mSELECT  `article_comments`.* FROM `article_comments`   ORDER BY updated_at desc LIMIT 10[0m
+  Rendered blogs/index.html.haml within layouts/application (1.8ms)
+  [1m[35mBlogInfo Load (0.1ms)[0m  SELECT  `blog_info`.* FROM `blog_info`   ORDER BY `blog_info`.`id` ASC LIMIT 1
+  Rendered layouts/_footer.html.haml (0.1ms)
+Completed 200 OK in 299ms (Views: 297.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 106.185.41.148 at 2015-08-27 13:46:36 +0800
+
+
+Started GET "/assets/register.css?body=1" for 106.185.41.148 at 2015-08-27 13:46:36 +0800
+
+
+Started GET "/assets/_font-awesome-ie7.min.css?body=1" for 106.185.41.148 at 2015-08-27 13:46:37 +0800
+
+
+Started GET "/assets/_font-awesome.css?body=1" for 106.185.41.148 at 2015-08-27 13:46:37 +0800
+
+
+Started GET "/assets/application.css?body=1" for 106.185.41.148 at 2015-08-27 13:46:37 +0800
+
+
+Started GET "/assets/social-share-button.css?body=1" for 106.185.41.148 at 2015-08-27 13:46:37 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 106.185.41.148 at 2015-08-27 13:46:37 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 106.185.41.148 at 2015-08-27 13:46:37 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 106.185.41.148 at 2015-08-27 13:46:37 +0800
+
+
+Started GET "/assets/html5shiv.min.js?body=1" for 106.185.41.148 at 2015-08-27 13:46:38 +0800
+
+
+Started GET "/assets/respond.min.js?body=1" for 106.185.41.148 at 2015-08-27 13:46:38 +0800
+
+
+Started GET "/assets/jquery-fieldselection.js?body=1" for 106.185.41.148 at 2015-08-27 13:46:38 +0800
+
+
+Started GET "/assets/markdown-toolbar-core.js?body=1" for 106.185.41.148 at 2015-08-27 13:46:38 +0800
+
+
+Started GET "/assets/markdown-toolbar-buttons.js?body=1" for 106.185.41.148 at 2015-08-27 13:46:39 +0800
+
+
+Started GET "/assets/markdown-toolbar.js?body=1" for 106.185.41.148 at 2015-08-27 13:46:39 +0800
+
+
+Started GET "/assets/jquery.iframe-transport.js?body=1" for 106.185.41.148 at 2015-08-27 13:46:39 +0800
+
+
+Started GET "/assets/jquery.remotipart.js?body=1" for 106.185.41.148 at 2015-08-27 13:46:39 +0800
+
+
+Started GET "/assets/social-share-button.js?body=1" for 106.185.41.148 at 2015-08-27 13:46:39 +0800
+
+
+Started GET "/assets/bootstrap.js?body=1" for 106.185.41.148 at 2015-08-27 13:46:39 +0800
+
+
+Started GET "/assets/application.js?body=1" for 106.185.41.148 at 2015-08-27 13:46:39 +0800
+
+
+Started GET "/assets/fontawesome-webfont.woff" for 106.185.41.148 at 2015-08-27 13:46:42 +0800
+
+
+Started GET "/login" for 106.185.41.148 at 2015-08-27 13:46:46 +0800
+Processing by UsersController#login as HTML
+Redirected to http://yy.zhangyu.today/login?from=http%3A%2F%2Fyy.zhangyu.today%2F
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/login?from=http%3A%2F%2Fyy.zhangyu.today%2F" for 106.185.41.148 at 2015-08-27 13:46:46 +0800
+Processing by UsersController#login as HTML
+  Parameters: {"from"=>"http://yy.zhangyu.today/"}
+  [1m[36mBlogInfo Load (0.1ms)[0m  [1mSELECT  `blog_info`.* FROM `blog_info`   ORDER BY `blog_info`.`id` ASC LIMIT 1[0m
+  Rendered users/login.html.haml within layouts/register (73.9ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `blog_info`.* FROM `blog_info`   ORDER BY `blog_info`.`id` ASC LIMIT 1
+Completed 200 OK in 371ms (Views: 360.9ms | ActiveRecord: 1.4ms)
+
+
+Started POST "/users/login_confirm?from=http%3A%2F%2Fyy.zhangyu.today%2F" for 106.185.41.148 at 2015-08-27 13:46:54 +0800
+Processing by UsersController#login_confirm as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"RV+AzvaAgweb9XoJ13uUGglGV01vgK0b+N5bWL2HJ+4=", "user"=>{"username"=>"yunanxili", "password"=>"[FILTERED]"}, "commit"=>"登录", "from"=>"http://yy.zhangyu.today/"}
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  `users`.* FROM `users`  WHERE `users`.`username` = 'yunanxili' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE `users` SET `last_login_time` = '2015-08-27 13:46:54', `updated_at` = '2015-08-27 13:46:54' WHERE `users`.`id` = 1[0m
+  [1m[35m (7.7ms)[0m  COMMIT
+Redirected to http://yy.zhangyu.today/
+Completed 302 Found in 136ms (ActiveRecord: 8.9ms)
+
+
+Started GET "/" for 106.185.41.148 at 2015-08-27 13:46:55 +0800
+Processing by BlogsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users`  WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mArticle Load (0.1ms)[0m  SELECT  `articles`.* FROM `articles`   ORDER BY updated_at desc LIMIT 10
+  Rendered articles/_articles.html.haml (0.8ms)
+  [1m[36mArticleComment Load (0.1ms)[0m  [1mSELECT  `article_comments`.* FROM `article_comments`   ORDER BY updated_at desc LIMIT 10[0m
+  Rendered blogs/index.html.haml within layouts/application (1.9ms)
+  [1m[35mBlogInfo Load (0.1ms)[0m  SELECT  `blog_info`.* FROM `blog_info`   ORDER BY `blog_info`.`id` ASC LIMIT 1
+  Rendered layouts/_footer.html.haml (0.1ms)
+Completed 200 OK in 260ms (Views: 257.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/blogs/about" for 106.185.41.148 at 2015-08-27 13:46:57 +0800
+Processing by BlogsController#about as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  `users`.* FROM `users`  WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mBlogInfo Load (0.1ms)[0m  SELECT  `blog_info`.* FROM `blog_info`   ORDER BY `blog_info`.`id` ASC LIMIT 1
+  Rendered blogs/about.html.haml within layouts/application (2.2ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `blog_info`.* FROM `blog_info`   ORDER BY `blog_info`.`id` ASC LIMIT 1[0m
+  Rendered layouts/_footer.html.haml (1.2ms)
+Completed 200 OK in 293ms (Views: 290.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/articles" for 106.185.41.148 at 2015-08-27 13:46:59 +0800
+Processing by ArticlesController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  `users`.* FROM `users`  WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mArticle Load (0.3ms)[0m  [1mSELECT  `articles`.* FROM `articles`   ORDER BY updated_at desc LIMIT 10 OFFSET 0[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM `articles`
+  Rendered articles/_articles.html.haml (10.3ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM `articles`[0m
+  [1m[35mCategory Load (0.3ms)[0m  SELECT `categories`.* FROM `categories`   ORDER BY articles_count desc
+  Rendered articles/_article_sidebar.html.haml (11.5ms)
+  Rendered articles/index.html.haml within layouts/application (28.1ms)
+  [1m[36mBlogInfo Load (0.1ms)[0m  [1mSELECT  `blog_info`.* FROM `blog_info`   ORDER BY `blog_info`.`id` ASC LIMIT 1[0m
+  Rendered layouts/_footer.html.haml (0.1ms)
+Completed 200 OK in 319ms (Views: 312.4ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/blogs/about" for 106.185.41.148 at 2015-08-27 13:47:56 +0800
+Processing by BlogsController#about as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  `users`.* FROM `users`  WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mBlogInfo Load (0.1ms)[0m  [1mSELECT  `blog_info`.* FROM `blog_info`   ORDER BY `blog_info`.`id` ASC LIMIT 1[0m
+  Rendered blogs/about.html.haml within layouts/application (0.2ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `blog_info`.* FROM `blog_info`   ORDER BY `blog_info`.`id` ASC LIMIT 1
+  Rendered layouts/_footer.html.haml (0.1ms)
+Completed 200 OK in 292ms (Views: 289.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 162.243.142.60 at 2015-08-27 13:55:26 +0800
+Processing by BlogsController#index as HTML
+  [1m[36mArticle Load (0.1ms)[0m  [1mSELECT  `articles`.* FROM `articles`   ORDER BY updated_at desc LIMIT 10[0m
+  Rendered articles/_articles.html.haml (1.0ms)
+  [1m[35mArticleComment Load (0.1ms)[0m  SELECT  `article_comments`.* FROM `article_comments`   ORDER BY updated_at desc LIMIT 10
+  Rendered blogs/index.html.haml within layouts/application (2.2ms)
+  [1m[36mBlogInfo Load (0.1ms)[0m  [1mSELECT  `blog_info`.* FROM `blog_info`   ORDER BY `blog_info`.`id` ASC LIMIT 1[0m
+  Rendered layouts/_footer.html.haml (0.1ms)
+Completed 200 OK in 273ms (Views: 272.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 162.243.142.60 at 2015-08-27 13:55:27 +0800
+
+
+Started GET "/assets/social-share-button.css?body=1" for 162.243.142.60 at 2015-08-27 13:55:27 +0800
+
+
+Started GET "/assets/_font-awesome.css?body=1" for 162.243.142.60 at 2015-08-27 13:55:28 +0800
+
+
+Started GET "/assets/_font-awesome-ie7.min.css?body=1" for 162.243.142.60 at 2015-08-27 13:55:28 +0800
+
+
+Started GET "/assets/application.css?body=1" for 162.243.142.60 at 2015-08-27 13:55:28 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 162.243.142.60 at 2015-08-27 13:55:28 +0800
+
+
+Started GET "/assets/register.css?body=1" for 162.243.142.60 at 2015-08-27 13:55:29 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 162.243.142.60 at 2015-08-27 13:55:29 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 162.243.142.60 at 2015-08-27 13:55:30 +0800
+
+
+Started GET "/assets/html5shiv.min.js?body=1" for 162.243.142.60 at 2015-08-27 13:55:30 +0800
+
+
+Started GET "/assets/respond.min.js?body=1" for 162.243.142.60 at 2015-08-27 13:55:32 +0800
+
+
+Started GET "/assets/jquery-fieldselection.js?body=1" for 162.243.142.60 at 2015-08-27 13:55:32 +0800
+
+
+Started GET "/assets/markdown-toolbar-buttons.js?body=1" for 162.243.142.60 at 2015-08-27 13:55:32 +0800
+
+
+Started GET "/assets/markdown-toolbar.js?body=1" for 162.243.142.60 at 2015-08-27 13:55:33 +0800
+
+
+Started GET "/assets/markdown-toolbar-core.js?body=1" for 162.243.142.60 at 2015-08-27 13:55:33 +0800
+
+
+Started GET "/assets/jquery.iframe-transport.js?body=1" for 162.243.142.60 at 2015-08-27 13:55:33 +0800
+
+
+Started GET "/assets/jquery.remotipart.js?body=1" for 162.243.142.60 at 2015-08-27 13:55:33 +0800
+
+
+Started GET "/assets/social-share-button.js?body=1" for 162.243.142.60 at 2015-08-27 13:55:35 +0800
+
+
+Started GET "/assets/bootstrap.js?body=1" for 162.243.142.60 at 2015-08-27 13:55:36 +0800
+
+
+Started GET "/assets/application.js?body=1" for 162.243.142.60 at 2015-08-27 13:55:36 +0800
+
+
+Started GET "/assets/fontawesome-webfont.woff" for 162.243.142.60 at 2015-08-27 13:55:48 +0800
+
+
+Started GET "/" for 162.243.142.60 at 2015-08-27 13:56:18 +0800
+Processing by BlogsController#index as HTML
+  [1m[35mArticle Load (0.1ms)[0m  SELECT  `articles`.* FROM `articles`   ORDER BY updated_at desc LIMIT 10
+  Rendered articles/_articles.html.haml (0.9ms)
+  [1m[36mArticleComment Load (0.1ms)[0m  [1mSELECT  `article_comments`.* FROM `article_comments`   ORDER BY updated_at desc LIMIT 10[0m
+  Rendered blogs/index.html.haml within layouts/application (1.9ms)
+  [1m[35mBlogInfo Load (0.1ms)[0m  SELECT  `blog_info`.* FROM `blog_info`   ORDER BY `blog_info`.`id` ASC LIMIT 1
+  Rendered layouts/_footer.html.haml (0.1ms)
+Completed 200 OK in 267ms (Views: 265.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 162.243.142.60 at 2015-08-27 13:56:19 +0800
+
+
+Started GET "/assets/register.css?body=1" for 162.243.142.60 at 2015-08-27 13:56:19 +0800
+
+
+Started GET "/assets/_font-awesome-ie7.min.css?body=1" for 162.243.142.60 at 2015-08-27 13:56:19 +0800
+
+
+Started GET "/assets/_font-awesome.css?body=1" for 162.243.142.60 at 2015-08-27 13:56:19 +0800
+
+
+Started GET "/assets/social-share-button.css?body=1" for 162.243.142.60 at 2015-08-27 13:56:19 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 162.243.142.60 at 2015-08-27 13:56:19 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 162.243.142.60 at 2015-08-27 13:56:19 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 162.243.142.60 at 2015-08-27 13:56:19 +0800
+
+
+Started GET "/assets/html5shiv.min.js?body=1" for 162.243.142.60 at 2015-08-27 13:56:19 +0800
+
+
+Started GET "/assets/respond.min.js?body=1" for 162.243.142.60 at 2015-08-27 13:56:19 +0800
+
+
+Started GET "/assets/jquery-fieldselection.js?body=1" for 162.243.142.60 at 2015-08-27 13:56:20 +0800
+
+
+Started GET "/assets/application.css?body=1" for 162.243.142.60 at 2015-08-27 13:56:20 +0800
+
+
+Started GET "/assets/markdown-toolbar-buttons.js?body=1" for 162.243.142.60 at 2015-08-27 13:56:20 +0800
+
+
+Started GET "/assets/markdown-toolbar.js?body=1" for 162.243.142.60 at 2015-08-27 13:56:20 +0800
+
+
+Started GET "/assets/jquery.iframe-transport.js?body=1" for 162.243.142.60 at 2015-08-27 13:56:20 +0800
+
+
+Started GET "/assets/jquery.remotipart.js?body=1" for 162.243.142.60 at 2015-08-27 13:56:20 +0800
+
+
+Started GET "/assets/social-share-button.js?body=1" for 162.243.142.60 at 2015-08-27 13:56:20 +0800
+
+
+Started GET "/assets/bootstrap.js?body=1" for 162.243.142.60 at 2015-08-27 13:56:20 +0800
+
+
+Started GET "/assets/markdown-toolbar-core.js?body=1" for 162.243.142.60 at 2015-08-27 13:56:20 +0800
+
+
+Started GET "/assets/application.js?body=1" for 162.243.142.60 at 2015-08-27 13:56:21 +0800
+
+
+Started GET "/assets/fontawesome-webfont.woff" for 162.243.142.60 at 2015-08-27 13:56:21 +0800
+
+
+Started GET "/" for 106.185.41.148 at 2015-08-27 14:14:35 +0800
+Processing by BlogsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  `users`.* FROM `users`  WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mArticle Load (0.2ms)[0m  SELECT  `articles`.* FROM `articles`   ORDER BY updated_at desc LIMIT 10
+  Rendered articles/_articles.html.haml (1.0ms)
+  [1m[36mArticleComment Load (0.1ms)[0m  [1mSELECT  `article_comments`.* FROM `article_comments`   ORDER BY updated_at desc LIMIT 10[0m
+  Rendered blogs/index.html.haml within layouts/application (2.2ms)
+  [1m[35mBlogInfo Load (0.1ms)[0m  SELECT  `blog_info`.* FROM `blog_info`   ORDER BY `blog_info`.`id` ASC LIMIT 1
+  Rendered layouts/_footer.html.haml (0.1ms)
+Completed 200 OK in 317ms (Views: 314.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 106.185.41.148 at 2015-08-27 14:14:35 +0800
+Processing by BlogsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  `users`.* FROM `users`  WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mArticle Load (0.1ms)[0m  SELECT  `articles`.* FROM `articles`   ORDER BY updated_at desc LIMIT 10
+  Rendered articles/_articles.html.haml (0.7ms)
+  [1m[36mArticleComment Load (0.1ms)[0m  [1mSELECT  `article_comments`.* FROM `article_comments`   ORDER BY updated_at desc LIMIT 10[0m
+  Rendered blogs/index.html.haml within layouts/application (1.7ms)
+  [1m[35mBlogInfo Load (0.1ms)[0m  SELECT  `blog_info`.* FROM `blog_info`   ORDER BY `blog_info`.`id` ASC LIMIT 1
+  Rendered layouts/_footer.html.haml (0.1ms)
+Completed 200 OK in 301ms (Views: 298.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 106.185.41.148 at 2015-08-27 14:14:36 +0800
+
+
+Started GET "/assets/register.css?body=1" for 106.185.41.148 at 2015-08-27 14:14:36 +0800
+
+
+Started GET "/assets/_font-awesome.css?body=1" for 106.185.41.148 at 2015-08-27 14:14:36 +0800
+
+
+Started GET "/assets/application.css?body=1" for 106.185.41.148 at 2015-08-27 14:14:36 +0800
+
+
+Started GET "/assets/_font-awesome-ie7.min.css?body=1" for 106.185.41.148 at 2015-08-27 14:14:36 +0800
+
+
+Started GET "/assets/social-share-button.css?body=1" for 106.185.41.148 at 2015-08-27 14:14:36 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 106.185.41.148 at 2015-08-27 14:14:36 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 106.185.41.148 at 2015-08-27 14:14:36 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 106.185.41.148 at 2015-08-27 14:14:36 +0800
+
+
+Started GET "/assets/html5shiv.min.js?body=1" for 106.185.41.148 at 2015-08-27 14:14:36 +0800
+
+
+Started GET "/assets/respond.min.js?body=1" for 106.185.41.148 at 2015-08-27 14:14:36 +0800
+
+
+Started GET "/assets/jquery-fieldselection.js?body=1" for 106.185.41.148 at 2015-08-27 14:14:36 +0800
+
+
+Started GET "/assets/markdown-toolbar-core.js?body=1" for 106.185.41.148 at 2015-08-27 14:14:36 +0800
+
+
+Started GET "/assets/markdown-toolbar-buttons.js?body=1" for 106.185.41.148 at 2015-08-27 14:14:36 +0800
+
+
+Started GET "/assets/markdown-toolbar.js?body=1" for 106.185.41.148 at 2015-08-27 14:14:36 +0800
+
+
+Started GET "/assets/jquery.iframe-transport.js?body=1" for 106.185.41.148 at 2015-08-27 14:14:36 +0800
+
+
+Started GET "/assets/jquery.remotipart.js?body=1" for 106.185.41.148 at 2015-08-27 14:14:36 +0800
+
+
+Started GET "/assets/social-share-button.js?body=1" for 106.185.41.148 at 2015-08-27 14:14:36 +0800
+
+
+Started GET "/assets/bootstrap.js?body=1" for 106.185.41.148 at 2015-08-27 14:14:36 +0800
+
+
+Started GET "/assets/application.js?body=1" for 106.185.41.148 at 2015-08-27 14:14:36 +0800
+
+
+Started GET "/assets/application.js?body=1" for 106.185.41.148 at 2015-08-27 14:14:37 +0800
+
+
+Started GET "/assets/fontawesome-webfont.woff" for 106.185.41.148 at 2015-08-27 14:14:37 +0800
+
+
+Started GET "/" for 106.185.41.148 at 2015-08-27 16:27:57 +0800
+Processing by BlogsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  `users`.* FROM `users`  WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mArticle Load (0.1ms)[0m  SELECT  `articles`.* FROM `articles`   ORDER BY updated_at desc LIMIT 10
+  Rendered articles/_articles.html.haml (0.8ms)
+  [1m[36mArticleComment Load (0.1ms)[0m  [1mSELECT  `article_comments`.* FROM `article_comments`   ORDER BY updated_at desc LIMIT 10[0m
+  Rendered blogs/index.html.haml within layouts/application (2.0ms)
+  [1m[35mBlogInfo Load (0.1ms)[0m  SELECT  `blog_info`.* FROM `blog_info`   ORDER BY `blog_info`.`id` ASC LIMIT 1
+  Rendered layouts/_footer.html.haml (0.2ms)
+Completed 200 OK in 301ms (Views: 298.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 106.185.41.148 at 2015-08-27 16:27:57 +0800
+Processing by BlogsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  `users`.* FROM `users`  WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mArticle Load (0.1ms)[0m  SELECT  `articles`.* FROM `articles`   ORDER BY updated_at desc LIMIT 10
+  Rendered articles/_articles.html.haml (0.7ms)
+  [1m[36mArticleComment Load (0.1ms)[0m  [1mSELECT  `article_comments`.* FROM `article_comments`   ORDER BY updated_at desc LIMIT 10[0m
+  Rendered blogs/index.html.haml within layouts/application (1.7ms)
+  [1m[35mBlogInfo Load (0.1ms)[0m  SELECT  `blog_info`.* FROM `blog_info`   ORDER BY `blog_info`.`id` ASC LIMIT 1
+  Rendered layouts/_footer.html.haml (0.3ms)
+Completed 200 OK in 276ms (Views: 273.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 106.185.41.148 at 2015-08-27 16:27:58 +0800
+
+
+Started GET "/assets/register.css?body=1" for 106.185.41.148 at 2015-08-27 16:27:58 +0800
+
+
+Started GET "/assets/_font-awesome.css?body=1" for 106.185.41.148 at 2015-08-27 16:27:58 +0800
+
+
+Started GET "/assets/application.css?body=1" for 106.185.41.148 at 2015-08-27 16:27:58 +0800
+
+
+Started GET "/assets/_font-awesome-ie7.min.css?body=1" for 106.185.41.148 at 2015-08-27 16:27:58 +0800
+
+
+Started GET "/assets/social-share-button.css?body=1" for 106.185.41.148 at 2015-08-27 16:27:58 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 106.185.41.148 at 2015-08-27 16:27:58 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 106.185.41.148 at 2015-08-27 16:27:58 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 106.185.41.148 at 2015-08-27 16:27:58 +0800
+
+
+Started GET "/assets/html5shiv.min.js?body=1" for 106.185.41.148 at 2015-08-27 16:27:58 +0800
+
+
+Started GET "/assets/respond.min.js?body=1" for 106.185.41.148 at 2015-08-27 16:27:58 +0800
+
+
+Started GET "/assets/jquery-fieldselection.js?body=1" for 106.185.41.148 at 2015-08-27 16:27:58 +0800
+
+
+Started GET "/assets/markdown-toolbar-core.js?body=1" for 106.185.41.148 at 2015-08-27 16:27:58 +0800
+
+
+Started GET "/assets/markdown-toolbar-buttons.js?body=1" for 106.185.41.148 at 2015-08-27 16:27:58 +0800
+
+
+Started GET "/assets/markdown-toolbar.js?body=1" for 106.185.41.148 at 2015-08-27 16:27:58 +0800
+
+
+Started GET "/assets/jquery.iframe-transport.js?body=1" for 106.185.41.148 at 2015-08-27 16:27:58 +0800
+
+
+Started GET "/assets/jquery.remotipart.js?body=1" for 106.185.41.148 at 2015-08-27 16:27:58 +0800
+
+
+Started GET "/assets/social-share-button.js?body=1" for 106.185.41.148 at 2015-08-27 16:27:59 +0800
+
+
+Started GET "/assets/bootstrap.js?body=1" for 106.185.41.148 at 2015-08-27 16:27:59 +0800
+
+
+Started GET "/assets/application.js?body=1" for 106.185.41.148 at 2015-08-27 16:27:59 +0800
+
+
+Started GET "/assets/fontawesome-webfont.woff" for 106.185.41.148 at 2015-08-27 16:27:59 +0800
+
+
+Started GET "/" for 106.185.41.148 at 2015-08-27 16:42:58 +0800
+Processing by BlogsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  `users`.* FROM `users`  WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mArticle Load (0.2ms)[0m  SELECT  `articles`.* FROM `articles`   ORDER BY updated_at desc LIMIT 10
+  Rendered articles/_articles.html.haml (0.8ms)
+  [1m[36mArticleComment Load (0.1ms)[0m  [1mSELECT  `article_comments`.* FROM `article_comments`   ORDER BY updated_at desc LIMIT 10[0m
+  Rendered blogs/index.html.haml within layouts/application (2.0ms)
+  [1m[35mBlogInfo Load (0.1ms)[0m  SELECT  `blog_info`.* FROM `blog_info`   ORDER BY `blog_info`.`id` ASC LIMIT 1
+  Rendered layouts/_footer.html.haml (0.1ms)
+Completed 200 OK in 285ms (Views: 282.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 106.185.41.148 at 2015-08-27 16:42:58 +0800
+Processing by BlogsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  `users`.* FROM `users`  WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mArticle Load (0.1ms)[0m  SELECT  `articles`.* FROM `articles`   ORDER BY updated_at desc LIMIT 10
+  Rendered articles/_articles.html.haml (0.6ms)
+  [1m[36mArticleComment Load (0.1ms)[0m  [1mSELECT  `article_comments`.* FROM `article_comments`   ORDER BY updated_at desc LIMIT 10[0m
+  Rendered blogs/index.html.haml within layouts/application (1.8ms)
+  [1m[35mBlogInfo Load (0.1ms)[0m  SELECT  `blog_info`.* FROM `blog_info`   ORDER BY `blog_info`.`id` ASC LIMIT 1
+  Rendered layouts/_footer.html.haml (0.3ms)
+Completed 200 OK in 292ms (Views: 289.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 106.185.41.148 at 2015-08-27 16:42:58 +0800
+
+
+Started GET "/assets/_font-awesome.css?body=1" for 106.185.41.148 at 2015-08-27 16:42:58 +0800
+
+
+Started GET "/assets/application.css?body=1" for 106.185.41.148 at 2015-08-27 16:42:58 +0800
+
+
+Started GET "/assets/register.css?body=1" for 106.185.41.148 at 2015-08-27 16:42:58 +0800
+
+
+Started GET "/assets/_font-awesome-ie7.min.css?body=1" for 106.185.41.148 at 2015-08-27 16:42:58 +0800
+
+
+Started GET "/assets/social-share-button.css?body=1" for 106.185.41.148 at 2015-08-27 16:42:58 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 106.185.41.148 at 2015-08-27 16:42:59 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 106.185.41.148 at 2015-08-27 16:42:59 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 106.185.41.148 at 2015-08-27 16:42:59 +0800
+
+
+Started GET "/assets/html5shiv.min.js?body=1" for 106.185.41.148 at 2015-08-27 16:42:59 +0800
+
+
+Started GET "/assets/jquery-fieldselection.js?body=1" for 106.185.41.148 at 2015-08-27 16:42:59 +0800
+
+
+Started GET "/assets/respond.min.js?body=1" for 106.185.41.148 at 2015-08-27 16:42:59 +0800
+
+
+Started GET "/assets/markdown-toolbar-core.js?body=1" for 106.185.41.148 at 2015-08-27 16:42:59 +0800
+
+
+Started GET "/assets/markdown-toolbar-buttons.js?body=1" for 106.185.41.148 at 2015-08-27 16:42:59 +0800
+
+
+Started GET "/assets/markdown-toolbar.js?body=1" for 106.185.41.148 at 2015-08-27 16:42:59 +0800
+
+
+Started GET "/assets/jquery.iframe-transport.js?body=1" for 106.185.41.148 at 2015-08-27 16:42:59 +0800
+
+
+Started GET "/assets/jquery.remotipart.js?body=1" for 106.185.41.148 at 2015-08-27 16:42:59 +0800
+
+
+Started GET "/assets/social-share-button.js?body=1" for 106.185.41.148 at 2015-08-27 16:42:59 +0800
+
+
+Started GET "/assets/bootstrap.js?body=1" for 106.185.41.148 at 2015-08-27 16:42:59 +0800
+
+
+Started GET "/assets/application.js?body=1" for 106.185.41.148 at 2015-08-27 16:42:59 +0800
+
+
+Started GET "/assets/fontawesome-webfont.woff" for 106.185.41.148 at 2015-08-27 16:43:00 +0800
+
+
+Started GET "/blogs/about" for 106.185.41.148 at 2015-08-27 16:43:02 +0800
+Processing by BlogsController#about as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  `users`.* FROM `users`  WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mBlogInfo Load (0.1ms)[0m  SELECT  `blog_info`.* FROM `blog_info`   ORDER BY `blog_info`.`id` ASC LIMIT 1
+  Rendered blogs/about.html.haml within layouts/application (0.2ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `blog_info`.* FROM `blog_info`   ORDER BY `blog_info`.`id` ASC LIMIT 1[0m
+  Rendered layouts/_footer.html.haml (0.1ms)
+Completed 200 OK in 294ms (Views: 291.7ms | ActiveRecord: 0.3ms)
