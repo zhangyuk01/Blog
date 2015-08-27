@@ -7130,3 +7130,1271 @@ Processing by ArticlesController#index as HTML
   [1m[36mBlogInfo Load (0.2ms)[0m  [1mSELECT  `blog_info`.* FROM `blog_info`   ORDER BY `blog_info`.`id` ASC LIMIT 1[0m
   Rendered layouts/_footer.html.haml (0.1ms)
 Completed 200 OK in 227ms (Views: 224.2ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-08-27 15:07:58 +0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by BlogsController#index as HTML
+  [1m[35mArticle Load (0.2ms)[0m  SELECT  `articles`.* FROM `articles`   ORDER BY updated_at desc LIMIT 10
+  Rendered articles/_articles.html.haml (2.4ms)
+  [1m[36mArticleComment Load (0.3ms)[0m  [1mSELECT  `article_comments`.* FROM `article_comments`   ORDER BY updated_at desc LIMIT 10[0m
+  Rendered blogs/index.html.haml within layouts/application (10.9ms)
+  [1m[35mBlogInfo Load (0.1ms)[0m  SELECT  `blog_info`.* FROM `blog_info`   ORDER BY `blog_info`.`id` ASC LIMIT 1
+  Rendered layouts/_footer.html.haml (0.9ms)
+Completed 200 OK in 355ms (Views: 298.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2015-08-27 15:07:59 +0800
+
+
+Started GET "/assets/register.css?body=1" for 127.0.0.1 at 2015-08-27 15:07:59 +0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-08-27 15:07:59 +0800
+
+
+Started GET "/assets/_font-awesome.css?body=1" for 127.0.0.1 at 2015-08-27 15:07:59 +0800
+
+
+Started GET "/assets/_font-awesome-ie7.min.css?body=1" for 127.0.0.1 at 2015-08-27 15:07:59 +0800
+
+
+Started GET "/assets/social-share-button.css?body=1" for 127.0.0.1 at 2015-08-27 15:07:59 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-08-27 15:07:59 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-08-27 15:07:59 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-08-27 15:07:59 +0800
+
+
+Started GET "/assets/html5shiv.min.js?body=1" for 127.0.0.1 at 2015-08-27 15:07:59 +0800
+
+
+Started GET "/assets/respond.min.js?body=1" for 127.0.0.1 at 2015-08-27 15:07:59 +0800
+
+
+Started GET "/assets/jquery-fieldselection.js?body=1" for 127.0.0.1 at 2015-08-27 15:07:59 +0800
+
+
+Started GET "/assets/markdown-toolbar-core.js?body=1" for 127.0.0.1 at 2015-08-27 15:07:59 +0800
+
+
+Started GET "/assets/markdown-toolbar-buttons.js?body=1" for 127.0.0.1 at 2015-08-27 15:07:59 +0800
+
+
+Started GET "/assets/markdown-toolbar.js?body=1" for 127.0.0.1 at 2015-08-27 15:07:59 +0800
+
+
+Started GET "/assets/jquery.iframe-transport.js?body=1" for 127.0.0.1 at 2015-08-27 15:07:59 +0800
+
+
+Started GET "/assets/jquery.remotipart.js?body=1" for 127.0.0.1 at 2015-08-27 15:07:59 +0800
+
+
+Started GET "/assets/social-share-button.js?body=1" for 127.0.0.1 at 2015-08-27 15:07:59 +0800
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-08-27 15:07:59 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-08-27 15:07:59 +0800
+
+
+Started GET "/blogs/about" for 127.0.0.1 at 2015-08-27 15:08:01 +0800
+Processing by BlogsController#about as HTML
+  [1m[36mBlogInfo Load (0.2ms)[0m  [1mSELECT  `blog_info`.* FROM `blog_info`   ORDER BY `blog_info`.`id` ASC LIMIT 1[0m
+  Rendered blogs/about.html.haml within layouts/application (1.9ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `blog_info`.* FROM `blog_info`   ORDER BY `blog_info`.`id` ASC LIMIT 1
+  Rendered layouts/_footer.html.haml (0.9ms)
+Completed 200 OK in 232ms (Views: 231.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/blogs/about" for 127.0.0.1 at 2015-08-27 15:22:11 +0800
+Processing by BlogsController#about as HTML
+  [1m[36mBlogInfo Load (0.2ms)[0m  [1mSELECT  `blog_info`.* FROM `blog_info`   ORDER BY `blog_info`.`id` ASC LIMIT 1[0m
+  Rendered blogs/about.html.haml within layouts/application (1.7ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `blog_info`.* FROM `blog_info`   ORDER BY `blog_info`.`id` ASC LIMIT 1
+  Rendered layouts/_footer.html.haml (0.1ms)
+Completed 200 OK in 212ms (Views: 210.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2015-08-27 15:22:11 +0800
+
+
+Started GET "/assets/register.css?body=1" for 127.0.0.1 at 2015-08-27 15:22:11 +0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-08-27 15:22:11 +0800
+
+
+Started GET "/assets/_font-awesome.css?body=1" for 127.0.0.1 at 2015-08-27 15:22:11 +0800
+
+
+Started GET "/assets/_font-awesome-ie7.min.css?body=1" for 127.0.0.1 at 2015-08-27 15:22:11 +0800
+
+
+Started GET "/assets/social-share-button.css?body=1" for 127.0.0.1 at 2015-08-27 15:22:11 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-08-27 15:22:11 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-08-27 15:22:11 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-08-27 15:22:11 +0800
+
+
+Started GET "/assets/html5shiv.min.js?body=1" for 127.0.0.1 at 2015-08-27 15:22:11 +0800
+
+
+Started GET "/assets/respond.min.js?body=1" for 127.0.0.1 at 2015-08-27 15:22:11 +0800
+
+
+Started GET "/assets/jquery-fieldselection.js?body=1" for 127.0.0.1 at 2015-08-27 15:22:11 +0800
+
+
+Started GET "/assets/markdown-toolbar-core.js?body=1" for 127.0.0.1 at 2015-08-27 15:22:11 +0800
+
+
+Started GET "/assets/markdown-toolbar-buttons.js?body=1" for 127.0.0.1 at 2015-08-27 15:22:11 +0800
+
+
+Started GET "/assets/markdown-toolbar.js?body=1" for 127.0.0.1 at 2015-08-27 15:22:11 +0800
+
+
+Started GET "/assets/jquery.iframe-transport.js?body=1" for 127.0.0.1 at 2015-08-27 15:22:11 +0800
+
+
+Started GET "/assets/jquery.remotipart.js?body=1" for 127.0.0.1 at 2015-08-27 15:22:11 +0800
+
+
+Started GET "/assets/social-share-button.js?body=1" for 127.0.0.1 at 2015-08-27 15:22:11 +0800
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-08-27 15:22:11 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-08-27 15:22:11 +0800
+
+
+Started GET "/blogs/about" for 127.0.0.1 at 2015-08-27 15:25:31 +0800
+Processing by BlogsController#about as HTML
+  [1m[36mBlogInfo Load (0.3ms)[0m  [1mSELECT  `blog_info`.* FROM `blog_info`   ORDER BY `blog_info`.`id` ASC LIMIT 1[0m
+  Rendered blogs/about.html.haml within layouts/application (1.8ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `blog_info`.* FROM `blog_info`   ORDER BY `blog_info`.`id` ASC LIMIT 1
+  Rendered layouts/_footer.html.haml (0.1ms)
+Completed 200 OK in 204ms (Views: 202.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2015-08-27 15:25:31 +0800
+
+
+Started GET "/assets/register.css?body=1" for 127.0.0.1 at 2015-08-27 15:25:31 +0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-08-27 15:25:31 +0800
+
+
+Started GET "/assets/_font-awesome.css?body=1" for 127.0.0.1 at 2015-08-27 15:25:31 +0800
+
+
+Started GET "/assets/_font-awesome-ie7.min.css?body=1" for 127.0.0.1 at 2015-08-27 15:25:31 +0800
+
+
+Started GET "/assets/social-share-button.css?body=1" for 127.0.0.1 at 2015-08-27 15:25:31 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-08-27 15:25:31 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-08-27 15:25:31 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-08-27 15:25:31 +0800
+
+
+Started GET "/assets/html5shiv.min.js?body=1" for 127.0.0.1 at 2015-08-27 15:25:31 +0800
+
+
+Started GET "/assets/respond.min.js?body=1" for 127.0.0.1 at 2015-08-27 15:25:31 +0800
+
+
+Started GET "/assets/jquery-fieldselection.js?body=1" for 127.0.0.1 at 2015-08-27 15:25:31 +0800
+
+
+Started GET "/assets/markdown-toolbar-core.js?body=1" for 127.0.0.1 at 2015-08-27 15:25:31 +0800
+
+
+Started GET "/assets/markdown-toolbar-buttons.js?body=1" for 127.0.0.1 at 2015-08-27 15:25:31 +0800
+
+
+Started GET "/assets/markdown-toolbar.js?body=1" for 127.0.0.1 at 2015-08-27 15:25:31 +0800
+
+
+Started GET "/assets/jquery.iframe-transport.js?body=1" for 127.0.0.1 at 2015-08-27 15:25:31 +0800
+
+
+Started GET "/assets/jquery.remotipart.js?body=1" for 127.0.0.1 at 2015-08-27 15:25:31 +0800
+
+
+Started GET "/assets/social-share-button.js?body=1" for 127.0.0.1 at 2015-08-27 15:25:31 +0800
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-08-27 15:25:31 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-08-27 15:25:31 +0800
+
+
+Started GET "/blogs/about" for 127.0.0.1 at 2015-08-27 15:26:19 +0800
+Processing by BlogsController#about as HTML
+  [1m[36mBlogInfo Load (0.2ms)[0m  [1mSELECT  `blog_info`.* FROM `blog_info`   ORDER BY `blog_info`.`id` ASC LIMIT 1[0m
+  Rendered blogs/about.html.haml within layouts/application (1.8ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `blog_info`.* FROM `blog_info`   ORDER BY `blog_info`.`id` ASC LIMIT 1
+  Rendered layouts/_footer.html.haml (0.1ms)
+Completed 200 OK in 202ms (Views: 200.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2015-08-27 15:26:19 +0800
+
+
+Started GET "/assets/register.css?body=1" for 127.0.0.1 at 2015-08-27 15:26:19 +0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-08-27 15:26:19 +0800
+
+
+Started GET "/assets/_font-awesome.css?body=1" for 127.0.0.1 at 2015-08-27 15:26:19 +0800
+
+
+Started GET "/assets/_font-awesome-ie7.min.css?body=1" for 127.0.0.1 at 2015-08-27 15:26:19 +0800
+
+
+Started GET "/assets/social-share-button.css?body=1" for 127.0.0.1 at 2015-08-27 15:26:19 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-08-27 15:26:19 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-08-27 15:26:19 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-08-27 15:26:19 +0800
+
+
+Started GET "/assets/html5shiv.min.js?body=1" for 127.0.0.1 at 2015-08-27 15:26:19 +0800
+
+
+Started GET "/assets/respond.min.js?body=1" for 127.0.0.1 at 2015-08-27 15:26:19 +0800
+
+
+Started GET "/assets/jquery-fieldselection.js?body=1" for 127.0.0.1 at 2015-08-27 15:26:19 +0800
+
+
+Started GET "/assets/markdown-toolbar-core.js?body=1" for 127.0.0.1 at 2015-08-27 15:26:19 +0800
+
+
+Started GET "/assets/markdown-toolbar-buttons.js?body=1" for 127.0.0.1 at 2015-08-27 15:26:19 +0800
+
+
+Started GET "/assets/markdown-toolbar.js?body=1" for 127.0.0.1 at 2015-08-27 15:26:19 +0800
+
+
+Started GET "/assets/jquery.iframe-transport.js?body=1" for 127.0.0.1 at 2015-08-27 15:26:19 +0800
+
+
+Started GET "/assets/jquery.remotipart.js?body=1" for 127.0.0.1 at 2015-08-27 15:26:19 +0800
+
+
+Started GET "/assets/social-share-button.js?body=1" for 127.0.0.1 at 2015-08-27 15:26:19 +0800
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-08-27 15:26:19 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-08-27 15:26:19 +0800
+
+
+Started GET "/blogs/about" for 127.0.0.1 at 2015-08-27 15:32:07 +0800
+Processing by BlogsController#about as HTML
+  [1m[36mBlogInfo Load (0.2ms)[0m  [1mSELECT  `blog_info`.* FROM `blog_info`   ORDER BY `blog_info`.`id` ASC LIMIT 1[0m
+  Rendered blogs/about.html.haml within layouts/application (0.1ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `blog_info`.* FROM `blog_info`   ORDER BY `blog_info`.`id` ASC LIMIT 1
+  Rendered layouts/_footer.html.haml (0.1ms)
+Completed 200 OK in 209ms (Views: 207.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2015-08-27 15:32:07 +0800
+
+
+Started GET "/assets/register.css?body=1" for 127.0.0.1 at 2015-08-27 15:32:07 +0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-08-27 15:32:07 +0800
+
+
+Started GET "/assets/_font-awesome.css?body=1" for 127.0.0.1 at 2015-08-27 15:32:07 +0800
+
+
+Started GET "/assets/_font-awesome-ie7.min.css?body=1" for 127.0.0.1 at 2015-08-27 15:32:07 +0800
+
+
+Started GET "/assets/social-share-button.css?body=1" for 127.0.0.1 at 2015-08-27 15:32:07 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-08-27 15:32:07 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-08-27 15:32:07 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-08-27 15:32:07 +0800
+
+
+Started GET "/assets/html5shiv.min.js?body=1" for 127.0.0.1 at 2015-08-27 15:32:07 +0800
+
+
+Started GET "/assets/respond.min.js?body=1" for 127.0.0.1 at 2015-08-27 15:32:07 +0800
+
+
+Started GET "/assets/jquery-fieldselection.js?body=1" for 127.0.0.1 at 2015-08-27 15:32:07 +0800
+
+
+Started GET "/assets/markdown-toolbar-core.js?body=1" for 127.0.0.1 at 2015-08-27 15:32:07 +0800
+
+
+Started GET "/assets/markdown-toolbar-buttons.js?body=1" for 127.0.0.1 at 2015-08-27 15:32:07 +0800
+
+
+Started GET "/assets/markdown-toolbar.js?body=1" for 127.0.0.1 at 2015-08-27 15:32:07 +0800
+
+
+Started GET "/assets/jquery.iframe-transport.js?body=1" for 127.0.0.1 at 2015-08-27 15:32:07 +0800
+
+
+Started GET "/assets/jquery.remotipart.js?body=1" for 127.0.0.1 at 2015-08-27 15:32:07 +0800
+
+
+Started GET "/assets/social-share-button.js?body=1" for 127.0.0.1 at 2015-08-27 15:32:07 +0800
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-08-27 15:32:07 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-08-27 15:32:07 +0800
+
+
+Started GET "/blogs/about" for 127.0.0.1 at 2015-08-27 15:32:10 +0800
+Processing by BlogsController#about as HTML
+  [1m[36mBlogInfo Load (0.2ms)[0m  [1mSELECT  `blog_info`.* FROM `blog_info`   ORDER BY `blog_info`.`id` ASC LIMIT 1[0m
+  Rendered blogs/about.html.haml within layouts/application (0.2ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `blog_info`.* FROM `blog_info`   ORDER BY `blog_info`.`id` ASC LIMIT 1
+  Rendered layouts/_footer.html.haml (0.1ms)
+Completed 200 OK in 217ms (Views: 215.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2015-08-27 15:32:10 +0800
+
+
+Started GET "/assets/register.css?body=1" for 127.0.0.1 at 2015-08-27 15:32:10 +0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-08-27 15:32:10 +0800
+
+
+Started GET "/assets/_font-awesome.css?body=1" for 127.0.0.1 at 2015-08-27 15:32:10 +0800
+
+
+Started GET "/assets/_font-awesome-ie7.min.css?body=1" for 127.0.0.1 at 2015-08-27 15:32:10 +0800
+
+
+Started GET "/assets/social-share-button.css?body=1" for 127.0.0.1 at 2015-08-27 15:32:10 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-08-27 15:32:10 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-08-27 15:32:10 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-08-27 15:32:10 +0800
+
+
+Started GET "/assets/html5shiv.min.js?body=1" for 127.0.0.1 at 2015-08-27 15:32:10 +0800
+
+
+Started GET "/assets/respond.min.js?body=1" for 127.0.0.1 at 2015-08-27 15:32:10 +0800
+
+
+Started GET "/assets/jquery-fieldselection.js?body=1" for 127.0.0.1 at 2015-08-27 15:32:10 +0800
+
+
+Started GET "/assets/markdown-toolbar-core.js?body=1" for 127.0.0.1 at 2015-08-27 15:32:10 +0800
+
+
+Started GET "/assets/markdown-toolbar-buttons.js?body=1" for 127.0.0.1 at 2015-08-27 15:32:10 +0800
+
+
+Started GET "/assets/markdown-toolbar.js?body=1" for 127.0.0.1 at 2015-08-27 15:32:10 +0800
+
+
+Started GET "/assets/jquery.iframe-transport.js?body=1" for 127.0.0.1 at 2015-08-27 15:32:10 +0800
+
+
+Started GET "/assets/jquery.remotipart.js?body=1" for 127.0.0.1 at 2015-08-27 15:32:10 +0800
+
+
+Started GET "/assets/social-share-button.js?body=1" for 127.0.0.1 at 2015-08-27 15:32:10 +0800
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-08-27 15:32:10 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-08-27 15:32:10 +0800
+
+
+Started GET "/blogs/about" for 127.0.0.1 at 2015-08-27 15:32:21 +0800
+Processing by BlogsController#about as HTML
+  [1m[36mBlogInfo Load (0.2ms)[0m  [1mSELECT  `blog_info`.* FROM `blog_info`   ORDER BY `blog_info`.`id` ASC LIMIT 1[0m
+  Rendered blogs/about.html.haml within layouts/application (1.9ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `blog_info`.* FROM `blog_info`   ORDER BY `blog_info`.`id` ASC LIMIT 1
+  Rendered layouts/_footer.html.haml (0.1ms)
+Completed 200 OK in 209ms (Views: 207.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2015-08-27 15:32:22 +0800
+
+
+Started GET "/assets/register.css?body=1" for 127.0.0.1 at 2015-08-27 15:32:22 +0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-08-27 15:32:22 +0800
+
+
+Started GET "/assets/_font-awesome.css?body=1" for 127.0.0.1 at 2015-08-27 15:32:22 +0800
+
+
+Started GET "/assets/_font-awesome-ie7.min.css?body=1" for 127.0.0.1 at 2015-08-27 15:32:22 +0800
+
+
+Started GET "/assets/social-share-button.css?body=1" for 127.0.0.1 at 2015-08-27 15:32:22 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-08-27 15:32:22 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-08-27 15:32:22 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-08-27 15:32:22 +0800
+
+
+Started GET "/assets/html5shiv.min.js?body=1" for 127.0.0.1 at 2015-08-27 15:32:22 +0800
+
+
+Started GET "/assets/respond.min.js?body=1" for 127.0.0.1 at 2015-08-27 15:32:22 +0800
+
+
+Started GET "/assets/jquery-fieldselection.js?body=1" for 127.0.0.1 at 2015-08-27 15:32:22 +0800
+
+
+Started GET "/assets/markdown-toolbar-core.js?body=1" for 127.0.0.1 at 2015-08-27 15:32:22 +0800
+
+
+Started GET "/assets/markdown-toolbar-buttons.js?body=1" for 127.0.0.1 at 2015-08-27 15:32:22 +0800
+
+
+Started GET "/assets/markdown-toolbar.js?body=1" for 127.0.0.1 at 2015-08-27 15:32:22 +0800
+
+
+Started GET "/assets/jquery.iframe-transport.js?body=1" for 127.0.0.1 at 2015-08-27 15:32:22 +0800
+
+
+Started GET "/assets/jquery.remotipart.js?body=1" for 127.0.0.1 at 2015-08-27 15:32:22 +0800
+
+
+Started GET "/assets/social-share-button.js?body=1" for 127.0.0.1 at 2015-08-27 15:32:22 +0800
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-08-27 15:32:22 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-08-27 15:32:22 +0800
+
+
+Started GET "/blogs/about" for 127.0.0.1 at 2015-08-27 15:32:35 +0800
+Processing by BlogsController#about as HTML
+  [1m[36mBlogInfo Load (0.2ms)[0m  [1mSELECT  `blog_info`.* FROM `blog_info`   ORDER BY `blog_info`.`id` ASC LIMIT 1[0m
+  Rendered blogs/about.html.haml within layouts/application (2.0ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `blog_info`.* FROM `blog_info`   ORDER BY `blog_info`.`id` ASC LIMIT 1
+  Rendered layouts/_footer.html.haml (0.1ms)
+Completed 200 OK in 227ms (Views: 225.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2015-08-27 15:32:35 +0800
+
+
+Started GET "/assets/register.css?body=1" for 127.0.0.1 at 2015-08-27 15:32:35 +0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-08-27 15:32:35 +0800
+
+
+Started GET "/assets/_font-awesome.css?body=1" for 127.0.0.1 at 2015-08-27 15:32:35 +0800
+
+
+Started GET "/assets/_font-awesome-ie7.min.css?body=1" for 127.0.0.1 at 2015-08-27 15:32:35 +0800
+
+
+Started GET "/assets/social-share-button.css?body=1" for 127.0.0.1 at 2015-08-27 15:32:35 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-08-27 15:32:35 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-08-27 15:32:35 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-08-27 15:32:35 +0800
+
+
+Started GET "/assets/html5shiv.min.js?body=1" for 127.0.0.1 at 2015-08-27 15:32:35 +0800
+
+
+Started GET "/assets/respond.min.js?body=1" for 127.0.0.1 at 2015-08-27 15:32:35 +0800
+
+
+Started GET "/assets/jquery-fieldselection.js?body=1" for 127.0.0.1 at 2015-08-27 15:32:35 +0800
+
+
+Started GET "/assets/markdown-toolbar-core.js?body=1" for 127.0.0.1 at 2015-08-27 15:32:35 +0800
+
+
+Started GET "/assets/markdown-toolbar-buttons.js?body=1" for 127.0.0.1 at 2015-08-27 15:32:35 +0800
+
+
+Started GET "/assets/markdown-toolbar.js?body=1" for 127.0.0.1 at 2015-08-27 15:32:35 +0800
+
+
+Started GET "/assets/jquery.iframe-transport.js?body=1" for 127.0.0.1 at 2015-08-27 15:32:35 +0800
+
+
+Started GET "/assets/jquery.remotipart.js?body=1" for 127.0.0.1 at 2015-08-27 15:32:35 +0800
+
+
+Started GET "/assets/social-share-button.js?body=1" for 127.0.0.1 at 2015-08-27 15:32:35 +0800
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-08-27 15:32:35 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-08-27 15:32:35 +0800
+
+
+Started GET "/blogs/about" for 127.0.0.1 at 2015-08-27 15:32:55 +0800
+Processing by BlogsController#about as HTML
+  [1m[36mBlogInfo Load (0.3ms)[0m  [1mSELECT  `blog_info`.* FROM `blog_info`   ORDER BY `blog_info`.`id` ASC LIMIT 1[0m
+  Rendered blogs/about.html.haml within layouts/application (1.7ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `blog_info`.* FROM `blog_info`   ORDER BY `blog_info`.`id` ASC LIMIT 1
+  Rendered layouts/_footer.html.haml (0.1ms)
+Completed 200 OK in 210ms (Views: 208.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2015-08-27 15:32:56 +0800
+
+
+Started GET "/assets/register.css?body=1" for 127.0.0.1 at 2015-08-27 15:32:56 +0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-08-27 15:32:56 +0800
+
+
+Started GET "/assets/_font-awesome.css?body=1" for 127.0.0.1 at 2015-08-27 15:32:56 +0800
+
+
+Started GET "/assets/_font-awesome-ie7.min.css?body=1" for 127.0.0.1 at 2015-08-27 15:32:56 +0800
+
+
+Started GET "/assets/social-share-button.css?body=1" for 127.0.0.1 at 2015-08-27 15:32:56 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-08-27 15:32:56 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-08-27 15:32:56 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-08-27 15:32:56 +0800
+
+
+Started GET "/assets/html5shiv.min.js?body=1" for 127.0.0.1 at 2015-08-27 15:32:56 +0800
+
+
+Started GET "/assets/respond.min.js?body=1" for 127.0.0.1 at 2015-08-27 15:32:56 +0800
+
+
+Started GET "/assets/jquery-fieldselection.js?body=1" for 127.0.0.1 at 2015-08-27 15:32:56 +0800
+
+
+Started GET "/assets/markdown-toolbar-core.js?body=1" for 127.0.0.1 at 2015-08-27 15:32:56 +0800
+
+
+Started GET "/assets/markdown-toolbar-buttons.js?body=1" for 127.0.0.1 at 2015-08-27 15:32:56 +0800
+
+
+Started GET "/assets/markdown-toolbar.js?body=1" for 127.0.0.1 at 2015-08-27 15:32:56 +0800
+
+
+Started GET "/assets/jquery.iframe-transport.js?body=1" for 127.0.0.1 at 2015-08-27 15:32:56 +0800
+
+
+Started GET "/assets/jquery.remotipart.js?body=1" for 127.0.0.1 at 2015-08-27 15:32:56 +0800
+
+
+Started GET "/assets/social-share-button.js?body=1" for 127.0.0.1 at 2015-08-27 15:32:56 +0800
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-08-27 15:32:56 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-08-27 15:32:56 +0800
+
+
+Started GET "/blogs/about" for 127.0.0.1 at 2015-08-27 15:33:14 +0800
+Processing by BlogsController#about as HTML
+  [1m[36mBlogInfo Load (0.2ms)[0m  [1mSELECT  `blog_info`.* FROM `blog_info`   ORDER BY `blog_info`.`id` ASC LIMIT 1[0m
+  Rendered blogs/about.html.haml within layouts/application (1.7ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `blog_info`.* FROM `blog_info`   ORDER BY `blog_info`.`id` ASC LIMIT 1
+  Rendered layouts/_footer.html.haml (0.1ms)
+Completed 200 OK in 208ms (Views: 206.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2015-08-27 15:33:15 +0800
+
+
+Started GET "/assets/register.css?body=1" for 127.0.0.1 at 2015-08-27 15:33:15 +0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-08-27 15:33:15 +0800
+
+
+Started GET "/assets/_font-awesome.css?body=1" for 127.0.0.1 at 2015-08-27 15:33:15 +0800
+
+
+Started GET "/assets/_font-awesome-ie7.min.css?body=1" for 127.0.0.1 at 2015-08-27 15:33:15 +0800
+
+
+Started GET "/assets/social-share-button.css?body=1" for 127.0.0.1 at 2015-08-27 15:33:15 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-08-27 15:33:15 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-08-27 15:33:15 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-08-27 15:33:15 +0800
+
+
+Started GET "/assets/html5shiv.min.js?body=1" for 127.0.0.1 at 2015-08-27 15:33:15 +0800
+
+
+Started GET "/assets/respond.min.js?body=1" for 127.0.0.1 at 2015-08-27 15:33:15 +0800
+
+
+Started GET "/assets/jquery-fieldselection.js?body=1" for 127.0.0.1 at 2015-08-27 15:33:15 +0800
+
+
+Started GET "/assets/markdown-toolbar-core.js?body=1" for 127.0.0.1 at 2015-08-27 15:33:15 +0800
+
+
+Started GET "/assets/markdown-toolbar-buttons.js?body=1" for 127.0.0.1 at 2015-08-27 15:33:15 +0800
+
+
+Started GET "/assets/markdown-toolbar.js?body=1" for 127.0.0.1 at 2015-08-27 15:33:15 +0800
+
+
+Started GET "/assets/jquery.iframe-transport.js?body=1" for 127.0.0.1 at 2015-08-27 15:33:15 +0800
+
+
+Started GET "/assets/jquery.remotipart.js?body=1" for 127.0.0.1 at 2015-08-27 15:33:15 +0800
+
+
+Started GET "/assets/social-share-button.js?body=1" for 127.0.0.1 at 2015-08-27 15:33:15 +0800
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-08-27 15:33:15 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-08-27 15:33:15 +0800
+
+
+Started GET "/blogs/about" for 127.0.0.1 at 2015-08-27 15:36:37 +0800
+Processing by BlogsController#about as HTML
+  [1m[36mBlogInfo Load (0.2ms)[0m  [1mSELECT  `blog_info`.* FROM `blog_info`   ORDER BY `blog_info`.`id` ASC LIMIT 1[0m
+  Rendered blogs/about.html.haml within layouts/application (2.3ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `blog_info`.* FROM `blog_info`   ORDER BY `blog_info`.`id` ASC LIMIT 1
+  Rendered layouts/_footer.html.haml (0.1ms)
+Completed 200 OK in 205ms (Views: 203.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2015-08-27 15:36:37 +0800
+
+
+Started GET "/assets/register.css?body=1" for 127.0.0.1 at 2015-08-27 15:36:37 +0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-08-27 15:36:37 +0800
+
+
+Started GET "/assets/_font-awesome.css?body=1" for 127.0.0.1 at 2015-08-27 15:36:37 +0800
+
+
+Started GET "/assets/_font-awesome-ie7.min.css?body=1" for 127.0.0.1 at 2015-08-27 15:36:37 +0800
+
+
+Started GET "/assets/social-share-button.css?body=1" for 127.0.0.1 at 2015-08-27 15:36:37 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-08-27 15:36:37 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-08-27 15:36:37 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-08-27 15:36:37 +0800
+
+
+Started GET "/assets/html5shiv.min.js?body=1" for 127.0.0.1 at 2015-08-27 15:36:37 +0800
+
+
+Started GET "/assets/respond.min.js?body=1" for 127.0.0.1 at 2015-08-27 15:36:37 +0800
+
+
+Started GET "/assets/jquery-fieldselection.js?body=1" for 127.0.0.1 at 2015-08-27 15:36:37 +0800
+
+
+Started GET "/assets/markdown-toolbar-core.js?body=1" for 127.0.0.1 at 2015-08-27 15:36:37 +0800
+
+
+Started GET "/assets/markdown-toolbar-buttons.js?body=1" for 127.0.0.1 at 2015-08-27 15:36:37 +0800
+
+
+Started GET "/assets/markdown-toolbar.js?body=1" for 127.0.0.1 at 2015-08-27 15:36:37 +0800
+
+
+Started GET "/assets/jquery.iframe-transport.js?body=1" for 127.0.0.1 at 2015-08-27 15:36:37 +0800
+
+
+Started GET "/assets/jquery.remotipart.js?body=1" for 127.0.0.1 at 2015-08-27 15:36:37 +0800
+
+
+Started GET "/assets/social-share-button.js?body=1" for 127.0.0.1 at 2015-08-27 15:36:37 +0800
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-08-27 15:36:37 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-08-27 15:36:37 +0800
+
+
+Started GET "/blogs/about" for 127.0.0.1 at 2015-08-27 15:52:07 +0800
+Processing by BlogsController#about as HTML
+  [1m[36mBlogInfo Load (0.2ms)[0m  [1mSELECT  `blog_info`.* FROM `blog_info`   ORDER BY `blog_info`.`id` ASC LIMIT 1[0m
+  Rendered blogs/about.html.haml within layouts/application (8.6ms)
+Completed 500 Internal Server Error in 12ms
+
+ActionView::Template::Error (Inconsistent indentation: 21 spaces used for indentation, but the rest of the document was indented using 2 spaces.):
+    13:       %h5 从业经历:  2014.12-至今北京乐单科技技术有限公司(全栈工程师)
+    14:     %p
+    15:       %h5 技术背景:  熟悉java，ssh框架,系统学习过java语言
+    16:                      熟悉Ruby, Ruby On Rails框架
+    17:                      熟悉Objective－c语言
+    18:                      熟悉Objective－c的原生IOS开发
+    19:                      熟悉Titanium的跨平台移动端开发
+  app/views/blogs/about.html.haml:16
+
+
+  Rendered /Users/zhangyu/.rbenv/versions/1.9.3-p551/lib/ruby/gems/1.9.1/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.1ms)
+  Rendered /Users/zhangyu/.rbenv/versions/1.9.3-p551/lib/ruby/gems/1.9.1/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/zhangyu/.rbenv/versions/1.9.3-p551/lib/ruby/gems/1.9.1/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (15.4ms)
+
+
+Started GET "/blogs/about" for 127.0.0.1 at 2015-08-27 15:53:00 +0800
+Processing by BlogsController#about as HTML
+  [1m[35mBlogInfo Load (0.2ms)[0m  SELECT  `blog_info`.* FROM `blog_info`   ORDER BY `blog_info`.`id` ASC LIMIT 1
+  Rendered blogs/about.html.haml within layouts/application (1.8ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `blog_info`.* FROM `blog_info`   ORDER BY `blog_info`.`id` ASC LIMIT 1[0m
+  Rendered layouts/_footer.html.haml (0.1ms)
+Completed 200 OK in 207ms (Views: 205.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2015-08-27 15:53:00 +0800
+
+
+Started GET "/assets/register.css?body=1" for 127.0.0.1 at 2015-08-27 15:53:00 +0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-08-27 15:53:01 +0800
+
+
+Started GET "/assets/_font-awesome.css?body=1" for 127.0.0.1 at 2015-08-27 15:53:01 +0800
+
+
+Started GET "/assets/_font-awesome-ie7.min.css?body=1" for 127.0.0.1 at 2015-08-27 15:53:01 +0800
+
+
+Started GET "/assets/social-share-button.css?body=1" for 127.0.0.1 at 2015-08-27 15:53:01 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-08-27 15:53:01 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-08-27 15:53:01 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-08-27 15:53:01 +0800
+
+
+Started GET "/assets/html5shiv.min.js?body=1" for 127.0.0.1 at 2015-08-27 15:53:01 +0800
+
+
+Started GET "/assets/respond.min.js?body=1" for 127.0.0.1 at 2015-08-27 15:53:01 +0800
+
+
+Started GET "/assets/jquery-fieldselection.js?body=1" for 127.0.0.1 at 2015-08-27 15:53:01 +0800
+
+
+Started GET "/assets/markdown-toolbar-core.js?body=1" for 127.0.0.1 at 2015-08-27 15:53:01 +0800
+
+
+Started GET "/assets/markdown-toolbar-buttons.js?body=1" for 127.0.0.1 at 2015-08-27 15:53:01 +0800
+
+
+Started GET "/assets/markdown-toolbar.js?body=1" for 127.0.0.1 at 2015-08-27 15:53:01 +0800
+
+
+Started GET "/assets/jquery.iframe-transport.js?body=1" for 127.0.0.1 at 2015-08-27 15:53:01 +0800
+
+
+Started GET "/assets/jquery.remotipart.js?body=1" for 127.0.0.1 at 2015-08-27 15:53:01 +0800
+
+
+Started GET "/assets/social-share-button.js?body=1" for 127.0.0.1 at 2015-08-27 15:53:01 +0800
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-08-27 15:53:01 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-08-27 15:53:01 +0800
+
+
+Started GET "/blogs/about" for 127.0.0.1 at 2015-08-27 15:54:16 +0800
+Processing by BlogsController#about as HTML
+  [1m[35mBlogInfo Load (0.3ms)[0m  SELECT  `blog_info`.* FROM `blog_info`   ORDER BY `blog_info`.`id` ASC LIMIT 1
+  Rendered blogs/about.html.haml within layouts/application (1.6ms)
+Completed 500 Internal Server Error in 5ms
+
+ActionView::Template::Error (Illegal nesting: content can't be both given on the same line as %h5 and nested within it.):
+    13:       %h5 从业经历:  2014.12-至今北京乐单科技技术有限公司(全栈工程师)
+    14:     %p
+    15:       %h5 技术背景:  熟悉java，ssh框架,系统学习过java语言
+    16:         %h5            熟悉Ruby, Ruby On Rails框架
+    17: 
+    18:     %p
+    19:       %h5 项目经历:  Appstore上线产品
+  app/views/blogs/about.html.haml:16
+
+
+  Rendered /Users/zhangyu/.rbenv/versions/1.9.3-p551/lib/ruby/gems/1.9.1/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered /Users/zhangyu/.rbenv/versions/1.9.3-p551/lib/ruby/gems/1.9.1/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/zhangyu/.rbenv/versions/1.9.3-p551/lib/ruby/gems/1.9.1/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (12.3ms)
+
+
+Started GET "/blogs/about" for 127.0.0.1 at 2015-08-27 15:54:21 +0800
+Processing by BlogsController#about as HTML
+  [1m[36mBlogInfo Load (0.2ms)[0m  [1mSELECT  `blog_info`.* FROM `blog_info`   ORDER BY `blog_info`.`id` ASC LIMIT 1[0m
+  Rendered blogs/about.html.haml within layouts/application (1.0ms)
+Completed 500 Internal Server Error in 4ms
+
+ActionView::Template::Error (Illegal nesting: content can't be both given on the same line as %h5 and nested within it.):
+    13:       %h5 从业经历:  2014.12-至今北京乐单科技技术有限公司(全栈工程师)
+    14:     %p
+    15:       %h5 技术背景:  熟悉java，ssh框架,系统学习过java语言
+    16:         %h6            熟悉Ruby, Ruby On Rails框架
+    17: 
+    18:     %p
+    19:       %h5 项目经历:  Appstore上线产品
+  app/views/blogs/about.html.haml:16
+
+
+  Rendered /Users/zhangyu/.rbenv/versions/1.9.3-p551/lib/ruby/gems/1.9.1/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered /Users/zhangyu/.rbenv/versions/1.9.3-p551/lib/ruby/gems/1.9.1/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/zhangyu/.rbenv/versions/1.9.3-p551/lib/ruby/gems/1.9.1/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (9.8ms)
+
+
+Started GET "/blogs/about" for 127.0.0.1 at 2015-08-27 15:59:09 +0800
+Processing by BlogsController#about as HTML
+  [1m[35mBlogInfo Load (0.2ms)[0m  SELECT  `blog_info`.* FROM `blog_info`   ORDER BY `blog_info`.`id` ASC LIMIT 1
+  Rendered blogs/about.html.haml within layouts/application (2.0ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `blog_info`.* FROM `blog_info`   ORDER BY `blog_info`.`id` ASC LIMIT 1[0m
+  Rendered layouts/_footer.html.haml (0.1ms)
+Completed 200 OK in 233ms (Views: 231.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2015-08-27 15:59:09 +0800
+
+
+Started GET "/assets/register.css?body=1" for 127.0.0.1 at 2015-08-27 15:59:09 +0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-08-27 15:59:09 +0800
+
+
+Started GET "/assets/_font-awesome.css?body=1" for 127.0.0.1 at 2015-08-27 15:59:09 +0800
+
+
+Started GET "/assets/_font-awesome-ie7.min.css?body=1" for 127.0.0.1 at 2015-08-27 15:59:09 +0800
+
+
+Started GET "/assets/social-share-button.css?body=1" for 127.0.0.1 at 2015-08-27 15:59:09 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-08-27 15:59:09 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-08-27 15:59:09 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-08-27 15:59:09 +0800
+
+
+Started GET "/assets/html5shiv.min.js?body=1" for 127.0.0.1 at 2015-08-27 15:59:09 +0800
+
+
+Started GET "/assets/respond.min.js?body=1" for 127.0.0.1 at 2015-08-27 15:59:09 +0800
+
+
+Started GET "/assets/jquery-fieldselection.js?body=1" for 127.0.0.1 at 2015-08-27 15:59:09 +0800
+
+
+Started GET "/assets/markdown-toolbar-core.js?body=1" for 127.0.0.1 at 2015-08-27 15:59:09 +0800
+
+
+Started GET "/assets/markdown-toolbar-buttons.js?body=1" for 127.0.0.1 at 2015-08-27 15:59:09 +0800
+
+
+Started GET "/assets/markdown-toolbar.js?body=1" for 127.0.0.1 at 2015-08-27 15:59:09 +0800
+
+
+Started GET "/assets/jquery.iframe-transport.js?body=1" for 127.0.0.1 at 2015-08-27 15:59:09 +0800
+
+
+Started GET "/assets/jquery.remotipart.js?body=1" for 127.0.0.1 at 2015-08-27 15:59:09 +0800
+
+
+Started GET "/assets/social-share-button.js?body=1" for 127.0.0.1 at 2015-08-27 15:59:09 +0800
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-08-27 15:59:09 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-08-27 15:59:09 +0800
+
+
+Started GET "/assets/fontawesome-webfont.woff" for 127.0.0.1 at 2015-08-27 15:59:09 +0800
+
+
+Started GET "/blogs/about" for 127.0.0.1 at 2015-08-27 15:59:37 +0800
+Processing by BlogsController#about as HTML
+  [1m[35mBlogInfo Load (0.2ms)[0m  SELECT  `blog_info`.* FROM `blog_info`   ORDER BY `blog_info`.`id` ASC LIMIT 1
+  Rendered blogs/about.html.haml within layouts/application (2.0ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `blog_info`.* FROM `blog_info`   ORDER BY `blog_info`.`id` ASC LIMIT 1[0m
+  Rendered layouts/_footer.html.haml (0.1ms)
+Completed 200 OK in 237ms (Views: 235.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2015-08-27 15:59:37 +0800
+
+
+Started GET "/assets/register.css?body=1" for 127.0.0.1 at 2015-08-27 15:59:37 +0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-08-27 15:59:37 +0800
+
+
+Started GET "/assets/_font-awesome.css?body=1" for 127.0.0.1 at 2015-08-27 15:59:37 +0800
+
+
+Started GET "/assets/_font-awesome-ie7.min.css?body=1" for 127.0.0.1 at 2015-08-27 15:59:37 +0800
+
+
+Started GET "/assets/social-share-button.css?body=1" for 127.0.0.1 at 2015-08-27 15:59:37 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-08-27 15:59:37 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-08-27 15:59:37 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-08-27 15:59:37 +0800
+
+
+Started GET "/assets/html5shiv.min.js?body=1" for 127.0.0.1 at 2015-08-27 15:59:37 +0800
+
+
+Started GET "/assets/respond.min.js?body=1" for 127.0.0.1 at 2015-08-27 15:59:37 +0800
+
+
+Started GET "/assets/jquery-fieldselection.js?body=1" for 127.0.0.1 at 2015-08-27 15:59:37 +0800
+
+
+Started GET "/assets/markdown-toolbar-core.js?body=1" for 127.0.0.1 at 2015-08-27 15:59:37 +0800
+
+
+Started GET "/assets/markdown-toolbar-buttons.js?body=1" for 127.0.0.1 at 2015-08-27 15:59:37 +0800
+
+
+Started GET "/assets/markdown-toolbar.js?body=1" for 127.0.0.1 at 2015-08-27 15:59:37 +0800
+
+
+Started GET "/assets/jquery.iframe-transport.js?body=1" for 127.0.0.1 at 2015-08-27 15:59:37 +0800
+
+
+Started GET "/assets/jquery.remotipart.js?body=1" for 127.0.0.1 at 2015-08-27 15:59:37 +0800
+
+
+Started GET "/assets/social-share-button.js?body=1" for 127.0.0.1 at 2015-08-27 15:59:37 +0800
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-08-27 15:59:37 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-08-27 15:59:37 +0800
+
+
+Started GET "/blogs/about" for 127.0.0.1 at 2015-08-27 16:06:00 +0800
+Processing by BlogsController#about as HTML
+  [1m[35mBlogInfo Load (0.2ms)[0m  SELECT  `blog_info`.* FROM `blog_info`   ORDER BY `blog_info`.`id` ASC LIMIT 1
+  Rendered blogs/about.html.haml within layouts/application (2.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `blog_info`.* FROM `blog_info`   ORDER BY `blog_info`.`id` ASC LIMIT 1[0m
+  Rendered layouts/_footer.html.haml (0.1ms)
+Completed 200 OK in 229ms (Views: 227.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2015-08-27 16:06:01 +0800
+
+
+Started GET "/assets/register.css?body=1" for 127.0.0.1 at 2015-08-27 16:06:01 +0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-08-27 16:06:01 +0800
+
+
+Started GET "/assets/_font-awesome.css?body=1" for 127.0.0.1 at 2015-08-27 16:06:01 +0800
+
+
+Started GET "/assets/_font-awesome-ie7.min.css?body=1" for 127.0.0.1 at 2015-08-27 16:06:01 +0800
+
+
+Started GET "/assets/social-share-button.css?body=1" for 127.0.0.1 at 2015-08-27 16:06:01 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-08-27 16:06:01 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-08-27 16:06:01 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-08-27 16:06:01 +0800
+
+
+Started GET "/assets/html5shiv.min.js?body=1" for 127.0.0.1 at 2015-08-27 16:06:01 +0800
+
+
+Started GET "/assets/respond.min.js?body=1" for 127.0.0.1 at 2015-08-27 16:06:01 +0800
+
+
+Started GET "/assets/jquery-fieldselection.js?body=1" for 127.0.0.1 at 2015-08-27 16:06:01 +0800
+
+
+Started GET "/assets/markdown-toolbar-core.js?body=1" for 127.0.0.1 at 2015-08-27 16:06:01 +0800
+
+
+Started GET "/assets/markdown-toolbar-buttons.js?body=1" for 127.0.0.1 at 2015-08-27 16:06:01 +0800
+
+
+Started GET "/assets/markdown-toolbar.js?body=1" for 127.0.0.1 at 2015-08-27 16:06:01 +0800
+
+
+Started GET "/assets/jquery.iframe-transport.js?body=1" for 127.0.0.1 at 2015-08-27 16:06:01 +0800
+
+
+Started GET "/assets/jquery.remotipart.js?body=1" for 127.0.0.1 at 2015-08-27 16:06:01 +0800
+
+
+Started GET "/assets/social-share-button.js?body=1" for 127.0.0.1 at 2015-08-27 16:06:01 +0800
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-08-27 16:06:01 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-08-27 16:06:01 +0800
+
+
+Started GET "/blogs/about" for 127.0.0.1 at 2015-08-27 16:06:24 +0800
+Processing by BlogsController#about as HTML
+  [1m[35mBlogInfo Load (0.2ms)[0m  SELECT  `blog_info`.* FROM `blog_info`   ORDER BY `blog_info`.`id` ASC LIMIT 1
+  Rendered blogs/about.html.haml within layouts/application (3.0ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `blog_info`.* FROM `blog_info`   ORDER BY `blog_info`.`id` ASC LIMIT 1[0m
+  Rendered layouts/_footer.html.haml (0.1ms)
+Completed 200 OK in 231ms (Views: 229.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2015-08-27 16:06:24 +0800
+
+
+Started GET "/assets/register.css?body=1" for 127.0.0.1 at 2015-08-27 16:06:24 +0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-08-27 16:06:24 +0800
+
+
+Started GET "/assets/_font-awesome.css?body=1" for 127.0.0.1 at 2015-08-27 16:06:24 +0800
+
+
+Started GET "/assets/_font-awesome-ie7.min.css?body=1" for 127.0.0.1 at 2015-08-27 16:06:24 +0800
+
+
+Started GET "/assets/social-share-button.css?body=1" for 127.0.0.1 at 2015-08-27 16:06:24 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-08-27 16:06:24 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-08-27 16:06:24 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-08-27 16:06:24 +0800
+
+
+Started GET "/assets/html5shiv.min.js?body=1" for 127.0.0.1 at 2015-08-27 16:06:24 +0800
+
+
+Started GET "/assets/respond.min.js?body=1" for 127.0.0.1 at 2015-08-27 16:06:24 +0800
+
+
+Started GET "/assets/jquery-fieldselection.js?body=1" for 127.0.0.1 at 2015-08-27 16:06:24 +0800
+
+
+Started GET "/assets/markdown-toolbar-core.js?body=1" for 127.0.0.1 at 2015-08-27 16:06:24 +0800
+
+
+Started GET "/assets/markdown-toolbar-buttons.js?body=1" for 127.0.0.1 at 2015-08-27 16:06:24 +0800
+
+
+Started GET "/assets/markdown-toolbar.js?body=1" for 127.0.0.1 at 2015-08-27 16:06:24 +0800
+
+
+Started GET "/assets/jquery.iframe-transport.js?body=1" for 127.0.0.1 at 2015-08-27 16:06:24 +0800
+
+
+Started GET "/assets/jquery.remotipart.js?body=1" for 127.0.0.1 at 2015-08-27 16:06:24 +0800
+
+
+Started GET "/assets/social-share-button.js?body=1" for 127.0.0.1 at 2015-08-27 16:06:24 +0800
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-08-27 16:06:24 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-08-27 16:06:24 +0800
+
+
+Started GET "/blogs/about" for 127.0.0.1 at 2015-08-27 16:06:47 +0800
+Processing by BlogsController#about as HTML
+  [1m[35mBlogInfo Load (0.2ms)[0m  SELECT  `blog_info`.* FROM `blog_info`   ORDER BY `blog_info`.`id` ASC LIMIT 1
+  Rendered blogs/about.html.haml within layouts/application (2.2ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `blog_info`.* FROM `blog_info`   ORDER BY `blog_info`.`id` ASC LIMIT 1[0m
+  Rendered layouts/_footer.html.haml (0.1ms)
+Completed 200 OK in 232ms (Views: 230.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2015-08-27 16:06:47 +0800
+
+
+Started GET "/assets/register.css?body=1" for 127.0.0.1 at 2015-08-27 16:06:47 +0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-08-27 16:06:47 +0800
+
+
+Started GET "/assets/_font-awesome.css?body=1" for 127.0.0.1 at 2015-08-27 16:06:47 +0800
+
+
+Started GET "/assets/_font-awesome-ie7.min.css?body=1" for 127.0.0.1 at 2015-08-27 16:06:47 +0800
+
+
+Started GET "/assets/social-share-button.css?body=1" for 127.0.0.1 at 2015-08-27 16:06:47 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-08-27 16:06:47 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-08-27 16:06:47 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-08-27 16:06:47 +0800
+
+
+Started GET "/assets/html5shiv.min.js?body=1" for 127.0.0.1 at 2015-08-27 16:06:47 +0800
+
+
+Started GET "/assets/respond.min.js?body=1" for 127.0.0.1 at 2015-08-27 16:06:47 +0800
+
+
+Started GET "/assets/jquery-fieldselection.js?body=1" for 127.0.0.1 at 2015-08-27 16:06:47 +0800
+
+
+Started GET "/assets/markdown-toolbar-core.js?body=1" for 127.0.0.1 at 2015-08-27 16:06:47 +0800
+
+
+Started GET "/assets/markdown-toolbar-buttons.js?body=1" for 127.0.0.1 at 2015-08-27 16:06:47 +0800
+
+
+Started GET "/assets/markdown-toolbar.js?body=1" for 127.0.0.1 at 2015-08-27 16:06:47 +0800
+
+
+Started GET "/assets/jquery.iframe-transport.js?body=1" for 127.0.0.1 at 2015-08-27 16:06:47 +0800
+
+
+Started GET "/assets/jquery.remotipart.js?body=1" for 127.0.0.1 at 2015-08-27 16:06:47 +0800
+
+
+Started GET "/assets/social-share-button.js?body=1" for 127.0.0.1 at 2015-08-27 16:06:47 +0800
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-08-27 16:06:47 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-08-27 16:06:47 +0800
+
+
+Started GET "/articles" for 127.0.0.1 at 2015-08-27 16:07:33 +0800
+Processing by ArticlesController#index as HTML
+  [1m[35mArticle Load (0.2ms)[0m  SELECT  `articles`.* FROM `articles`   ORDER BY updated_at desc LIMIT 10 OFFSET 0
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM `articles`[0m
+  Rendered articles/_articles.html.haml (11.8ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM `articles`
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT `categories`.* FROM `categories`   ORDER BY articles_count desc[0m
+  Rendered articles/_article_sidebar.html.haml (28.7ms)
+  Rendered articles/index.html.haml within layouts/application (45.2ms)
+  [1m[35mBlogInfo Load (0.2ms)[0m  SELECT  `blog_info`.* FROM `blog_info`   ORDER BY `blog_info`.`id` ASC LIMIT 1
+  Rendered layouts/_footer.html.haml (0.1ms)
+Completed 200 OK in 241ms (Views: 233.2ms | ActiveRecord: 6.0ms)
